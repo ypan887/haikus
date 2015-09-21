@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 ruby "2.2.2"
 
 gem 'rails', '4.2.4'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt'
 gem "active_model_serializers", github: "rails-api/active_model_serializers"
 
@@ -14,7 +12,7 @@ group :development, :test do
   gem 'rspec_api_documentation'
   gem 'rspec-rails', '~> 3.0'
   gem 'sqlite3'
-  gem 'simplecov', :require => false  
+  gem 'simplecov', :require => false
 end
 
 group :development do
