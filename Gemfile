@@ -5,6 +5,8 @@ ruby "2.2.2"
 gem 'rails', '4.2.4'
 gem 'bcrypt'
 gem "active_model_serializers", github: "rails-api/active_model_serializers"
+gem 'omniauth-github', github: 'intridea/omniauth-github'
+gem 'figaro'
 
 group :development, :test do
   gem 'spring'  
