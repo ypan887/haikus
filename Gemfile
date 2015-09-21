@@ -7,6 +7,7 @@ gem 'bcrypt'
 gem "active_model_serializers", github: "rails-api/active_model_serializers"
 
 group :development, :test do
+  gem 'spring'  
   gem 'byebug'
   gem 'factory_girl_rails'
   gem 'rspec_api_documentation'
@@ -15,10 +16,7 @@ group :development, :test do
   gem 'simplecov', :require => false
 end
 
-group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
+group :production do
   gem 'pg'
   gem 'capistrano', '~> 3.1'
   gem 'capistrano-rails', '~> 1.1'
