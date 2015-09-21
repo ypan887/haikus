@@ -12,14 +12,14 @@ default: &default
 development:
   adapter: sqlite3
   encoding: unicode
-  database: haiku_development
+  database: haikus_development
   pool: 5
   username: paid_programmer
 
 test: &test
   adapter: sqlite3
   encoding: unicode
-  database: haiku_test
+  database: haikus_test
   pool: 5
   username: paid_programmer
   host: localhost
@@ -27,7 +27,7 @@ test: &test
 production:
   adapter: postgresql
   encoding: unicode
-  database: haiku_production
+  database: haikus_production
   host: localhost
   pool: 5
   username: paid_programmer

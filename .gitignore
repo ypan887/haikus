@@ -3,3 +3,8 @@
 /haiku_test
 /tmp
 /spec/simplecov
+
+/haikus_development
+/haikus_test
+
+.ruby-version
