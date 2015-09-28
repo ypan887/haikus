@@ -50,3 +50,19 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
 end
+
+# omniauth testing wiki https://github.com/intridea/omniauth/wiki/Integration-Testing
+OmniAuth.config.test_mode = true
+OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+  :provider => 'github',
+  :uid => '123545',
+  :info => {
+    'name' => 'User One',
+    'email' => 'user_one@example.com',
+    'nickname' => 'userone'
+  },
+  :credentials => {
+    'token' => "78ad309702301277afdb6a2408e7b9dd735c4ab5"
+  }
+  # etc.
+})
