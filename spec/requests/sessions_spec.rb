@@ -12,8 +12,8 @@ describe 'sessions', type: :request do
     }.to change{ Session.count }.by(1)
 
     body = JSON.parse(response.body)
-    expect(body['oauth_token']).to_not be_nil
-    expect(body['user_id']).to eq(1)
+    expect(body['data']['attributes']['oauth_token']).to_not be_nil
+    expect(body['data']['attributes']['user_id']).to eq(1)
   end
 
   after :each do
