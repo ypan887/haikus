@@ -16,7 +16,21 @@ describe 'sessions', type: :request do
     expect(body['data']['attributes']['user_id']).to eq(1)
   end
 
-  after :each do
-    OmniAuth.config.mock_auth[:github] = nil
+  it 'adds a user' do
+    expect {
+      get '/auth/github/callback'
+    }.to change{ User.count }.by(1)
+  end
+
+end
+
+describe 'sessions destroy', type: :request do
+  session = Session.create(user_id: 1, oauth_token: "MyString")
+
+  it 'deletes a session' do
+    expect {
+      delete "/sessions/#{session.id}"
+    }.to change{ Session.count }.by(-1)
+    expect(response.status).to eq(204)
   end
 end
