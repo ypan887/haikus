@@ -11,6 +11,13 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    session = Session.find_by(id: params[:id])
+    session.destroy
+
+    head 204
+  end
+
   private
 
   def auth_hash
