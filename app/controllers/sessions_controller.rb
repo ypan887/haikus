@@ -3,12 +3,13 @@ class SessionsController < ApplicationController
     token = auth_hash.credentials.token
     email = auth_hash.info.email
 
-    if user = User.find_or_create_by(email: email)
-      session = Session.create(oauth_token: token, user_id: user.id)
-      render json: session
-    else
-      render json: "400", status: 400
-    end
+    user = User.find_or_create_by(email: email)
+    session = Session.create(oauth_token: token, user_id: user.id)
+    render json: session
+  end
+
+  def auth_failed
+    render json: '400', status: 400
   end
 
   def destroy
