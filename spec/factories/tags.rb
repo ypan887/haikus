@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :tag do
     haiku_id 1
-tag "MyString"
+    tag "MyString"
   end
 
 end
